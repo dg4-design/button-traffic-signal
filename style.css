@@ -1,0 +1,154 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+}
+
+#crosswalk {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 800px;
+  padding: 50px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.signal-pole {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signal-pole::after {
+  content: "";
+  width: 16px;
+  height: 200px;
+  background-color: #555;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.signal-pole.vehicle::after {
+  height: 460px;
+}
+
+.pedestrian-signal,
+.vehicle-signal {
+  background-color: #333;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.signal-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.vehicle-signal .signal-box {
+  flex-direction: row;
+}
+
+.signal {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 8px;
+  opacity: 0.3;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3) inset;
+  transition: all 0.3s ease;
+}
+
+#pedestrianRed {
+  background-color: #ff4136;
+}
+#pedestrianGreen {
+  background-color: #2ecc40;
+}
+#vehicleRed {
+  background-color: #ff4136;
+}
+#vehicleYellow {
+  background-color: #ffdc00;
+}
+#vehicleGreen {
+  background-color: #2ecc40;
+}
+
+.active {
+  opacity: 1;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+}
+
+.button-box {
+  background-color: #ffd700;
+  border-radius: 15px;
+  padding: 25px 15px;
+  margin-top: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 140px;
+  height: 110px;
+  position: relative;
+  justify-content: space-between;
+}
+
+.led-display {
+  background-color: #000;
+  color: #ff0000;
+  font-family: "Digital", monospace;
+  font-size: 16px;
+  padding: 8px;
+  margin-bottom: 15px;
+  width: 90%;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+#crossButton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #c33333;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+#crossButton:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ボタンの周りにネジを追加 */
+.button-box::before,
+.button-box::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #888;
+  border-radius: 50%;
+}
+
+.button-box::before {
+  top: 5px;
+  left: 5px;
+}
+
+.button-box::after {
+  top: 5px;
+  right: 5px;
+}

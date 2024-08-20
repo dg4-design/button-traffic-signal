@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>押しボタン式横断歩道信号</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <div id="crosswalk">
+      <div class="signal-pole">
+        <div class="pedestrian-signal">
+          <div class="signal-box">
+            <div id="pedestrianRed" class="signal active"></div>
+            <div id="pedestrianGreen" class="signal"></div>
+          </div>
+        </div>
+        <div class="button-box">
+          <div class="led-display">おまちください</div>
+          <button id="crossButton"></button>
+        </div>
+      </div>
+      <div class="signal-pole vehicle">
+        <div class="vehicle-signal">
+          <div class="signal-box">
+            <div id="vehicleRed" class="signal"></div>
+            <div id="vehicleYellow" class="signal"></div>
+            <div id="vehicleGreen" class="signal active"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
